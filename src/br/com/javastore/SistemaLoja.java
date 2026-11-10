@@ -3,14 +3,19 @@ package br.com.javastore;
 import java.util.Scanner;
 
 public class SistemaLoja {
+    //Scanner
     Scanner scanner = new Scanner(System.in);
-    //Metodo inicialização menu na Main
 
-    //Criação do array/vetor de armazenamento dos produtos, utilizado pelo case2
+    //Criação do array/vetor de armazenamento dos produtos, utilizado pelo case 2
     //Se chama produto por conta da minha classe Produto. Estou utilizando essa classe como array
     int numero_max = 1000;
     Produto[] produtos = new Produto[numero_max];
 
+    //Array de armazenamento de funcionarios, utilizado pelo case 3
+    int max_funcionarios = 100;
+    Funcionario[] funcionarios = new Funcionario[max_funcionarios];
+
+    //Metodo inicialização menu na Main
     public  void iniciarMenu(){
     //Criação menu
         int opcaoMenu = -1;
@@ -32,11 +37,12 @@ public class SistemaLoja {
                     cadastrarProduto();
                     break;
                 case 2:
-                    System.out.println("Lista de produtos");
+                    System.out.println("Produtos cadastrados");
                     listarProdutos();
                     break;
                 case 3:
-                    //Cadastrar funcionário
+                    System.out.println("Cadastro de funcionário");
+                    cadastrarFuncionario();
                     break;
                 case 4:
                     //Realizar venda
@@ -58,7 +64,7 @@ public class SistemaLoja {
         double preco = scanner.nextDouble();
         System.out.println("Quantidade: ");
         int quantidade = scanner.nextInt();
-        //Chamando o construtor para guardar os dados do produto a ser cadastrado
+        //Iniciaizando o objeto produto
         Produto produto = new Produto(nome, preco, quantidade);
         boolean produtoArmazenado = false; // produtoArmazenado começa como falso, se ele for == null, é true e é possível cadastrar, se não for == null ele é falso e alerta que não é mais possível cadastrar produtos.
         //Armazenar os produtos . Utilizei produtos pois é a variável do array onde é armazenado
@@ -78,17 +84,57 @@ public class SistemaLoja {
     //Criação do metodo de listar produtos utilizado pelo case 2
     public void listarProdutos (){
         boolean produtoEncontrado = false;  // Identifica se existe pelo menos um produto cadastrado.
+        int totalProdutos = 0; //Contador de produtos
         for (int i = 0; i < produtos.length; i++){
             if (produtos[i] != null){ //if faz verificação para não resultar em produtos null
                 produtoEncontrado = true;
-                System.out.println("Nome: " + produtos[i].nome);
-                System.out.println("Preço: " + produtos[i].preco);
-                System.out.println("Quantidade: " + produtos[i].quantidade);
+                produtos[i].exibirProduto();
                 System.out.println("------------------------");
+                totalProdutos++; //Contador de produtos
             } // Não precisamos de um else aqui, pois queremos percorrer  o array inteiro e exibir todos os produtos cadastrados.
         }
-        if (produtoEncontrado == false){
-            System.out.println("Nenum produto cadastrado.");
+        if (totalProdutos >0){ //Para caso não haja produtos cadastrados, não imprimir esse if, somente o de "Nenhum produto cadastrado"
+            System.out.println("Total de produtos cadastrados: " + totalProdutos); //Exibição da quantidade de produtos
+        }
+        if (produtoEncontrado == false) {
+            System.out.println("Nenhum produto cadastrado.");
         }
     }
+
+    //Criação do metedo de cadastrar funcionários utilizado pelo case 3
+    public void cadastrarFuncionario(){
+        System.out.println("Nome funcionário: ");
+        String nome = scanner.nextLine();
+
+        System.out.println("Idade: ");
+        int idade = scanner.nextInt();
+
+        System.out.println("Cargo: ");
+        scanner.nextLine();
+        String cargo = scanner.nextLine();
+
+        System.out.println("Salário: ");
+        double salario = scanner.nextDouble();
+
+        System.out.println("Departamento: ");
+        scanner.nextLine();
+        String departamento = scanner.nextLine();
+
+        //Inicializando o objeto funcionario
+        Funcionario funcionario = new Funcionario(nome, idade, cargo, salario, departamento );
+        boolean funcionarioCadastrado = false;
+        for (int i = 0; i < funcionarios.length;i++){
+            if (funcionarios[i] == null){
+                funcionarioCadastrado = true;
+                funcionarios[i] = funcionario;
+                System.out.println("Funcionário cadastrado!");
+                break;
+            }
+        }
+        if (funcionarioCadastrado == false){
+            System.out.println("Não é possível cadastrar mais funcionários, entre em contato com o suporte.");
+        }
+    }
+
+
 }
