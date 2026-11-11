@@ -15,6 +15,9 @@ public class SistemaLoja {
     int max_funcionarios = 100;
     Funcionario[] funcionarios = new Funcionario[max_funcionarios];
 
+    //Contador do ID de produto utilizando pelo Case 1
+    int proximoId = 1;
+
     //Metodo inicialização menu na Main
     public  void iniciarMenu(){
     //Criação menu
@@ -64,8 +67,9 @@ public class SistemaLoja {
         double preco = scanner.nextDouble();
         System.out.println("Quantidade: ");
         int quantidade = scanner.nextInt();
+        scanner.nextLine();
         //Iniciaizando o objeto produto
-        Produto produto = new Produto(nome, preco, quantidade);
+        Produto produto = new Produto(proximoId, nome, preco, quantidade);
         boolean produtoArmazenado = false; // produtoArmazenado começa como falso, se ele for == null, é true e é possível cadastrar, se não for == null ele é falso e alerta que não é mais possível cadastrar produtos.
         //Armazenar os produtos . Utilizei produtos pois é a variável do array onde é armazenado
         for (int i = 0; i < produtos.length; i++) {
@@ -73,6 +77,7 @@ public class SistemaLoja {
                 produtoArmazenado = true;
                 produtos[i] = produto; //O for fará percorrer pelo array até encontrar um cmapo null para armazenar o objeto produto
                 System.out.println("Produto cadastrado com sucesso!");
+                proximoId++;
                 break;
             }
         }
