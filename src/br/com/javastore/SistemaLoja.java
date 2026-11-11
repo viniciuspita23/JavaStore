@@ -28,6 +28,7 @@ public class SistemaLoja {
             System.out.println("2 - Listar produtos");
             System.out.println("3 - Cadastrar funcionário");
             System.out.println("4 - Relaizar venda");
+            System.out.println("5 - Relatórios");
             System.out.println("0 - Sair");
             System.out.println("Escolha uma opção: ");
             opcaoMenu = scanner.nextInt();
@@ -51,6 +52,9 @@ public class SistemaLoja {
                     System.out.println("Realizar venda");
                     realizarVenda();
                     break;
+                case 5:
+                    System.out.println("Escolha um relatório");
+                    subMenu();
                 case 0:
                     System.out.println("Saindo...");
                     break;
@@ -165,11 +169,37 @@ public class SistemaLoja {
                 System.out.println("Produto não encontrado!");
             }
         }
-
-
-
     }
 
+    //Metodo do submenu de relatórios utilizado no case 5
+    public void subMenu(){
+        System.out.println("1 - Histórico de vendas");
+        System.out.println("2 - Calcular faturamento");
+        System.out.println("3 - Identificar produto mais vendido");
+        System.out.println("4 - Exibir quantidade de produtos em estoque");
+        System.out.println("5 - Voltar");
+        int opcaoRelatorio = scanner.nextInt();
+        scanner.nextLine();
+        switch (opcaoRelatorio){
+            case 1:
+                //
+                break;
+            case 2:
+                //
+                break;
+            case 3:
+                //
+                break;
+            case 4:
+                //
+                break;
+            case 5:
+                //
+                break;
+            default:
+                System.out.println("Opção inválida. Digite uma opção válida do menu!");
+        }
+    }
 
 
 }
