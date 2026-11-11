@@ -48,7 +48,8 @@ public class SistemaLoja {
                     cadastrarFuncionario();
                     break;
                 case 4:
-                    //Realizar venda
+                    System.out.println("Realizar venda");
+                    realizarVenda();
                     break;
                 case 0:
                     System.out.println("Saindo...");
@@ -140,6 +141,35 @@ public class SistemaLoja {
             System.out.println("Não é possível cadastrar mais funcionários, entre em contato com o suporte.");
         }
     }
+
+    //Criando o metodo de Venda utilizado no case 4
+    public void realizarVenda(){
+        System.out.println("Selecione o produto para realizar a venda: ");
+        int idProd = scanner.nextInt();
+        System.out.println("Digite a quantidade: ");
+        int qtdProd = scanner.nextInt();
+        boolean produtoEncontrado = false;
+        for (int i = 0; i < produtos.length; i++) {
+            if (produtos[i] != null && produtos[i].id == idProd ){
+                produtoEncontrado = true;
+                produtos[i].exibirProduto();
+                if (qtdProd <= produtos[i].quantidade){
+                    System.out.println("Venda realiza!");
+                    produtos[i].quantidade -=qtdProd;
+                    Venda venda = new Venda(idProd, qtdProd);
+                } else {
+                    System.out.println("Quantidade indisponível!");
+                }
+            }
+            if (produtoEncontrado == false){
+                System.out.println("Produto não encontrado!");
+            }
+        }
+
+
+
+    }
+
 
 
 }
