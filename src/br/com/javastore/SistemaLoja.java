@@ -15,6 +15,10 @@ public class SistemaLoja {
     int max_funcionarios = 100;
     Funcionario[] funcionarios = new Funcionario[max_funcionarios];
 
+    //Array de armazenamento do histórico de vendas
+    int max_historico = 1000000000;
+    Relatorio[] = new Relatorios[max_historico];
+
     //Contador do ID de produto utilizando pelo Case 1
     int proximoId = 1;
 
