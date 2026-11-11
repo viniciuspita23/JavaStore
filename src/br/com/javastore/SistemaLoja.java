@@ -16,8 +16,8 @@ public class SistemaLoja {
     Funcionario[] funcionarios = new Funcionario[max_funcionarios];
 
     //Array de armazenamento do histórico de vendas
-    int max_historico = 1000000000;
-    Relatorio[] = new Relatorios[max_historico];
+    int max_historico = 1000;
+    Venda[] vendas = new Venda[max_historico];
 
     //Contador do ID de produto utilizando pelo Case 1
     int proximoId = 1;
@@ -157,6 +157,7 @@ public class SistemaLoja {
         System.out.println("Digite a quantidade: ");
         int qtdProd = scanner.nextInt();
         boolean produtoEncontrado = false;
+        Venda venda = null;
         for (int i = 0; i < produtos.length; i++) {
             if (produtos[i] != null && produtos[i].id == idProd ){
                 produtoEncontrado = true;
@@ -164,15 +165,27 @@ public class SistemaLoja {
                 if (qtdProd <= produtos[i].quantidade){
                     System.out.println("Venda realiza!");
                     produtos[i].quantidade -=qtdProd;
-                    Venda venda = new Venda(idProd, qtdProd);
+                    venda = new Venda(idProd, qtdProd);
                 } else {
                     System.out.println("Quantidade indisponível!");
                 }
             }
-            if (produtoEncontrado == false){
-                System.out.println("Produto não encontrado!");
-            }
+
         }
+        if (produtoEncontrado == false){
+            System.out.println("Produto não encontrado!");
+        }
+            if (venda != null){
+                boolean vendaHistorico = false;
+                for (int i = 0; i < vendas.length; i++) {
+                    if (vendas[i] == null) {
+                        vendaHistorico = true;
+                        vendas[i] = venda;
+                        break;
+                    }
+                }
+            }
+
     }
 
     //Metodo do submenu de relatórios utilizado no case 5
@@ -202,6 +215,13 @@ public class SistemaLoja {
                 break;
             default:
                 System.out.println("Opção inválida. Digite uma opção válida do menu!");
+        }
+    }
+
+    //Metodo utilizado para o sub case 1 do case 5
+    public void listarHistoricoVendas(){
+        for (int i = 0; i < vendas.length ; i++) {
+
         }
     }
 
