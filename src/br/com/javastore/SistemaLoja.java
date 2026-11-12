@@ -169,6 +169,7 @@ public class SistemaLoja {
                 } else {
                     System.out.println("Quantidade indisponível!");
                 }
+                break;
             }
 
         }
