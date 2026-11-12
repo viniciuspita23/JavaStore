@@ -250,5 +250,35 @@ public class SistemaLoja {
         System.out.println("Faturamento total: " + faturamento);
     }
 
+    //Metodo do subcase 3 do case 5
+    public void prodMaisVendido(){
+        boolean comparacao = false;
+        int maiorQtdVendida = 0;
+        String prodMaisVendido = "";
+        for (int i = 0; i < produtos.length ; i++) {
+            if (produtos[i] != null){
+                int qtdVendidaProd = 0;
+                for (int j = 0; j < vendas.length; j++) {
+                    if (vendas[j] != null){
+                        comparacao = vendas[j].idProd == produtos[i].id;
+                        if (comparacao){
+                            qtdVendidaProd += vendas[j].qtdProd;
+
+                        }
+                    }
+                }
+                if (qtdVendidaProd > maiorQtdVendida){
+                    maiorQtdVendida = qtdVendidaProd;
+                    prodMaisVendido = produtos[i].nome;
+                }
+            }
+        }
+        if (maiorQtdVendida > 0){
+            System.out.println("Produto mais vendido: " + prodMaisVendido + " | Quantidade: " + maiorQtdVendida);
+        } else {
+            System.out.println("Ainda não existem vendas registradas.");
+        }
+    }
+
 
 }
