@@ -59,6 +59,7 @@ public class SistemaLoja {
                 case 5:
                     System.out.println("Escolha um relatório");
                     subMenu();
+                    break;
                 case 0:
                     System.out.println("Saindo...");
                     break;
@@ -165,7 +166,7 @@ public class SistemaLoja {
                 if (qtdProd <= produtos[i].quantidade){
                     System.out.println("Venda realiza!");
                     produtos[i].quantidade -=qtdProd;
-                    venda = new Venda(idProd, qtdProd);
+                    venda = new Venda(produtos[i].nome,idProd, qtdProd);
                 } else {
                     System.out.println("Quantidade indisponível!");
                 }
@@ -200,7 +201,7 @@ public class SistemaLoja {
         scanner.nextLine();
         switch (opcaoRelatorio){
             case 1:
-                //
+                listarHistoricoVendas();
                 break;
             case 2:
                 //
@@ -221,8 +222,20 @@ public class SistemaLoja {
 
     //Metodo utilizado para o sub case 1 do case 5
     public void listarHistoricoVendas(){
+        boolean listarHisVendas = false;
+        int totalVendas = 0;
         for (int i = 0; i < vendas.length ; i++) {
-
+            if (vendas[i] != null){
+                listarHisVendas = true;
+                vendas[i].exibirVenda();
+                totalVendas++;
+            }
+        }
+        if (totalVendas > 0){
+            System.out.println("Total de vendas: " + totalVendas);
+        }
+        if (listarHisVendas == false){
+            System.out.println("Não existem vendas registradas.");
         }
     }
 
