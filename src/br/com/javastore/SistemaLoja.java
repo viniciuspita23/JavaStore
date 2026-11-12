@@ -155,15 +155,15 @@ public class SistemaLoja {
     public void realizarVenda(){
         System.out.println("Selecione o produto para realizar a venda: ");
         int idProd = scanner.nextInt();
-        System.out.println("Digite a quantidade: ");
-        int qtdProd = scanner.nextInt();
-        boolean produtoEncontrado = false;
+                boolean produtoEncontrado = false;
         Venda venda = null;
         for (int i = 0; i < produtos.length; i++) {
             if (produtos[i] != null && produtos[i].id == idProd ){
                 produtoEncontrado = true;
                 produtos[i].exibirProduto();
-                if (qtdProd <= produtos[i].quantidade){
+                System.out.println("Digite a quantidade: ");
+                int qtdProd = scanner.nextInt();
+                if (qtdProd>0 && qtdProd <= produtos[i].quantidade){
                     System.out.println("Venda realiza!");
                     produtos[i].quantidade -=qtdProd;
                     venda = new Venda(idProd, produtos[i].nome, produtos[i].preco, qtdProd);
@@ -177,16 +177,16 @@ public class SistemaLoja {
         if (produtoEncontrado == false){
             System.out.println("Produto não encontrado!");
         }
-            if (venda != null){
-                boolean vendaHistorico = false;
-                for (int i = 0; i < vendas.length; i++) {
-                    if (vendas[i] == null) {
-                        vendaHistorico = true;
-                        vendas[i] = venda;
-                        break;
-                    }
+        if (venda != null) {
+            boolean vendaHistorico = false;
+            for (int i = 0; i < vendas.length; i++) {
+                if (vendas[i] == null) {
+                    vendaHistorico = true;
+                    vendas[i] = venda;
+                    break;
                 }
             }
+        }
 
     }
 
@@ -207,13 +207,12 @@ public class SistemaLoja {
                 calcularFaturamento();
                 break;
             case 3:
-                //
+                prodMaisVendido();
                 break;
             case 4:
-                //
+                exibirEstoque();
                 break;
             case 5:
-                //
                 break;
             default:
                 System.out.println("Opção inválida. Digite uma opção válida do menu!");
