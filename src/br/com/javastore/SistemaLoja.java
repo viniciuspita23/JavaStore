@@ -204,7 +204,7 @@ public class SistemaLoja {
                 listarHistoricoVendas();
                 break;
             case 2:
-                //
+                calcularFaturamento();
                 break;
             case 3:
                 //
@@ -241,8 +241,13 @@ public class SistemaLoja {
 
     //Metodo do subcase 2 do case 5
     public void calcularFaturamento(){
-
-
+        double faturamento = 0;
+        for (int i = 0; i < vendas.length;i++){
+            if (vendas[i] != null){
+                faturamento += vendas[i].qtdProd * vendas[i].precoProd;
+            }
+        }
+        System.out.println("Faturamento total: " + faturamento);
     }
 
 
