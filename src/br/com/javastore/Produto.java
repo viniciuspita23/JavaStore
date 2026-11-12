@@ -16,11 +16,16 @@ public class Produto {
     }
 
     //Metodo de exibição de produto
-    public  void exibirProduto (){
+    public void exibirProduto (){
         System.out.println("ID: " + id);
         System.out.println("Produto: " + nome);
         System.out.println("Preço: " + preco);
         System.out.println("Quantidade: " + quantidade);
+    }
+
+    //Metodo para exibir estoque
+    public void exibirEstoque(){
+        System.out.println("ID : " + id + " | Produto: " + nome + " | QTD: " + quantidade);
     }
 
 }

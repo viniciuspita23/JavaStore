@@ -280,5 +280,14 @@ public class SistemaLoja {
         }
     }
 
+    //Metodo subcase 4 do case 5
+    public void exibirEstoque (){
+        for (int i = 0; i < produtos.length; i++) {
+            if (produtos[i] != null){
+                produtos[i].exibirEstoque();
+            }
+        }
+    }
+
 
 }
