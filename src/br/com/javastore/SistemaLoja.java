@@ -166,7 +166,7 @@ public class SistemaLoja {
                 if (qtdProd <= produtos[i].quantidade){
                     System.out.println("Venda realiza!");
                     produtos[i].quantidade -=qtdProd;
-                    venda = new Venda(produtos[i].nome,idProd, qtdProd);
+                    venda = new Venda(idProd, produtos[i].nome, produtos[i].preco, qtdProd);
                 } else {
                     System.out.println("Quantidade indisponível!");
                 }
@@ -237,6 +237,12 @@ public class SistemaLoja {
         if (listarHisVendas == false){
             System.out.println("Não existem vendas registradas.");
         }
+    }
+
+    //Metodo do subcase 2 do case 5
+    public void calcularFaturamento(){
+
+
     }
 
 
