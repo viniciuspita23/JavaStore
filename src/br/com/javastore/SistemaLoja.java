@@ -178,10 +178,8 @@ public class SistemaLoja {
             System.out.println("Produto não encontrado!");
         }
         if (venda != null) {
-            boolean vendaHistorico = false;
             for (int i = 0; i < vendas.length; i++) {
                 if (vendas[i] == null) {
-                    vendaHistorico = true;
                     vendas[i] = venda;
                     break;
                 }
