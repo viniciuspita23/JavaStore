@@ -91,7 +91,7 @@ public class SistemaLoja {
                 break;
             }
         }
-        if (produtoArmazenado == false){
+        if (!produtoArmazenado){
             System.out.println("Não há espaço para cadastrar mais produtos.");
         }
     }
@@ -111,7 +111,7 @@ public class SistemaLoja {
         if (totalProdutos >0){ //Para caso não haja produtos cadastrados, não imprimir esse if, somente o de "Nenhum produto cadastrado"
             System.out.println("Total de produtos cadastrados: " + totalProdutos); //Exibição da quantidade de produtos
         }
-        if (produtoEncontrado == false) {
+        if (!produtoEncontrado) {
             System.out.println("Nenhum produto cadastrado.");
         }
     }
@@ -146,7 +146,7 @@ public class SistemaLoja {
                 break;
             }
         }
-        if (funcionarioCadastrado == false){
+        if (!funcionarioCadastrado){
             System.out.println("Não é possível cadastrar mais funcionários, entre em contato com o suporte.");
         }
     }
@@ -174,7 +174,7 @@ public class SistemaLoja {
             }
 
         }
-        if (produtoEncontrado == false){
+        if (!produtoEncontrado){
             System.out.println("Produto não encontrado!");
         }
         if (venda != null) {
@@ -233,7 +233,7 @@ public class SistemaLoja {
         if (totalVendas > 0){
             System.out.println("Total de vendas: " + totalVendas);
         }
-        if (listarHisVendas == false){
+        if (!listarHisVendas){
             System.out.println("Não existem vendas registradas.");
         }
     }
