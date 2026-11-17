@@ -1,4 +1,4 @@
-# JavasStore
+# JavaStore
 O JavaStore é um sistema de gerenciamento de loja desenvolvido em Java, com o objetivo de praticar lógica de programação, programação orientada a objetos e conceitos de desenvolvimento de sistemas.
 
 ## Organização do Repositório
