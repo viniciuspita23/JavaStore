@@ -70,11 +70,20 @@ public class SistemaLoja {
     }
 
     //Metodo de cadastro de produto referente ao case 1
-    public void cadastrarProduto (){
+        public void cadastrarProduto (){
+            double preco = -1;
+
         System.out.println("Nome produto: ");
         String nome = scanner.nextLine();
-        System.out.println("Preço produto: ");
-        double preco = scanner.nextDouble();
+
+        while (preco <= 0){
+            System.out.println("Preço produto: ");
+            preco = scanner.nextDouble();
+            if (preco <= 0){
+                System.out.println("Preço inválido, digite novamente!");
+            }
+        }
+
         System.out.println("Quantidade: ");
         int quantidade = scanner.nextInt();
         scanner.nextLine();
@@ -153,19 +162,28 @@ public class SistemaLoja {
 
     //Criando o metodo de Venda utilizado no case 4
     public void realizarVenda(){
+        int qtdProd = -1;
+        boolean produtoEncontrado = false;
+        Venda venda = null;
+
         System.out.println("Selecione o produto para realizar a venda: ");
         int idProd = scanner.nextInt();
-                boolean produtoEncontrado = false;
-        Venda venda = null;
+
         for (int i = 0; i < produtos.length; i++) {
             if (produtos[i] != null && produtos[i].id == idProd ){
                 produtoEncontrado = true;
                 produtos[i].exibirProduto();
-                System.out.println("Digite a quantidade: ");
-                int qtdProd = scanner.nextInt();
-                if (qtdProd>0 && qtdProd <= produtos[i].quantidade){
+
+                while (qtdProd <= 0) {
+                    System.out.println("Digite a quantidade: ");
+                    qtdProd = scanner.nextInt();
+                    if (qtdProd <= 0){
+                        System.out.println("Quantidade inválida!");
+                    }
+                }
+                if (qtdProd <= produtos[i].quantidade) {
                     System.out.println("Venda realiza!");
-                    produtos[i].quantidade -=qtdProd;
+                    produtos[i].quantidade -= qtdProd;
                     venda = new Venda(idProd, produtos[i].nome, produtos[i].preco, qtdProd);
                 } else {
                     System.out.println("Quantidade indisponível!");
