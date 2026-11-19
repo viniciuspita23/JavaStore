@@ -57,13 +57,13 @@ Produtos com nomes diferentes poderão ser cadastrados, mesmo que representem pr
 
 O sistema deverá impedir o cadastro de produtos com quantidade inicial igual ou inferior a zero.
 
-## 3. Regras Planejadas
-
-As regras abaixo representam melhorias aprovadas para versões futuras e ainda não estão implementadas.
-
 ### RN12 — Validação do nome do produto
 
 O sistema deverá impedir o cadastro de produtos com nome vazio ou contendo apenas espaços em branco.
+
+## 3. Regras Planejadas
+
+As regras abaixo representam melhorias aprovadas para versões futuras e ainda não estão implementadas.
 
 ### RN13 — Unicidade do nome do funcionário
 

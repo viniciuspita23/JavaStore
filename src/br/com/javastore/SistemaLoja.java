@@ -82,7 +82,7 @@ public class SistemaLoja {
                 System.out.println("Nome produto: ");
                 nome = scanner.nextLine();
                 if(nome.isBlank()){
-                    System.out.println("Nome não pode ser em branco ou conter espaços vazios!");
+                    System.out.println("Nome não pode ser vazio ou com espaços em branco!");
                 }
             }
 
