@@ -156,6 +156,8 @@ public class SistemaLoja {
         boolean nomeDuplicado = true;
         int idade = -1;
         double salario = -1;
+        String cargo = "";
+        String departamento = "";
 
         while (nomeDuplicado){
             nomeDuplicado = false;
@@ -176,10 +178,15 @@ public class SistemaLoja {
                 System.out.println("Idade inválida, insira uma que seja válida!");
             }
         }
-
-        System.out.println("Cargo: ");
         scanner.nextLine();
-        String cargo = scanner.nextLine();
+
+        while (cargo.isBlank()) {
+            System.out.println("Cargo: ");
+            cargo = scanner.nextLine();
+            if (cargo.isBlank()){
+                System.out.println("Cargo não pode ser vazio ou com espaço em branco, insira novamente!");
+            }
+        }
 
         while (salario <=0){
             System.out.println("Salário: ");
@@ -188,10 +195,15 @@ public class SistemaLoja {
                 System.out.println("Salário deve ser maior que zero, insira novamente!");
             }
         }
-
-        System.out.println("Departamento: ");
         scanner.nextLine();
-        String departamento = scanner.nextLine();
+
+        while (departamento.isBlank()) {
+            System.out.println("Departamento: ");
+            departamento = scanner.nextLine();
+            if (departamento.isBlank()){
+                System.out.println("Departamento não pode ser vazio ou com espaço em branco, insira novamente!");
+            }
+        }
 
         //Inicializando o objeto funcionario
         Funcionario funcionario = new Funcionario(nome, idade, cargo, salario, departamento );
