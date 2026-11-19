@@ -7,7 +7,7 @@ public class Produto {
     double preco;
     int quantidade;
 
-    //Construtores para inicializarem os atributos
+    //Construtores para inicializarem os objetos
     public Produto(int id, String nome, double preco, int quantidade){
         this.id = id;
         this.nome = nome;
