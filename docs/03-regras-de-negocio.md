@@ -43,13 +43,14 @@ O sistema não deve permitir a venda de quantidades superiores ao estoque dispon
 
 Quando não existirem vendas registradas, o sistema deverá informar ao usuário que não há vendas registradas.
 
+### RN09 — Validação do preço do produto
+
+O sistema deverá impedir o cadastro e a realização de vendas de produtos cujo preço seja igual ou inferior a zero.
+
 ## 3. Regras Planejadas
 
 As regras abaixo representam melhorias aprovadas para versões futuras e ainda não estão implementadas.
 
-### RN09 — Validação do preço do produto
-
-O sistema deverá impedir o cadastro e a realização de vendas de produtos cujo preço seja igual ou inferior a zero.
 
 ### RN10 — Unicidade do nome do produto
 
