@@ -71,10 +71,24 @@ public class SistemaLoja {
 
     //Metodo de cadastro de produto referente ao case 1
         public void cadastrarProduto (){
+            String nome = "";
             double preco = -1;
+            boolean nomeduplicado = true;
 
-        System.out.println("Nome produto: ");
-        String nome = scanner.nextLine();
+        while (nomeduplicado){
+            nomeduplicado = false;
+
+            System.out.println("Nome produto: ");
+            nome = scanner.nextLine();
+
+            for (int i = 0; i <produtos.length ; i++) {
+                if (produtos[i] != null && nome.equals(produtos[i].nome)){
+                    System.out.println("Produto já cadastrado!");
+                    nomeduplicado = true;
+                }
+            }
+        }
+
 
         while (preco <= 0){
             System.out.println("Preço produto: ");

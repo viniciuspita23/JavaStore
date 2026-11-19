@@ -47,14 +47,13 @@ Quando não existirem vendas registradas, o sistema deverá informar ao usuário
 
 O sistema deverá impedir o cadastro e a realização de vendas de produtos cujo preço seja igual ou inferior a zero.
 
-## 3. Regras Planejadas
-
-As regras abaixo representam melhorias aprovadas para versões futuras e ainda não estão implementadas.
-
-
 ### RN10 — Unicidade do nome do produto
 
 O sistema deverá impedir o cadastro de produtos com nomes duplicados.
+
+## 3. Regras Planejadas
+
+As regras abaixo representam melhorias aprovadas para versões futuras e ainda não estão implementadas.
 
 Produtos com nomes diferentes poderão ser cadastrados, mesmo que representem produtos semelhantes. A identificação de possíveis duplicidades ficará sob responsabilidade do usuário.
 
