@@ -71,13 +71,13 @@ Nomes diferentes poderão ser cadastrados, mesmo que sejam semelhantes.
 
 O sistema deverá impedir o cadastro de funcionários com idade igual ou inferior a zero.
 
-## 3. Regras Planejadas
-
-As regras abaixo representam melhorias aprovadas para versões futuras e ainda não estão implementadas.
-
 ### RN15 — Validação do salário do funcionário
 
 O sistema deverá impedir o cadastro de funcionários com salário igual ou inferior a zero.
+
+## 3. Regras Planejadas
+
+As regras abaixo representam melhorias aprovadas para versões futuras e ainda não estão implementadas.
 
 ### RN16 — Validação de cargo e departamento
 

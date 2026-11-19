@@ -155,6 +155,7 @@ public class SistemaLoja {
         String nome = "";
         boolean nomeDuplicado = true;
         int idade = -1;
+        double salario = -1;
 
         while (nomeDuplicado){
             nomeDuplicado = false;
@@ -176,13 +177,17 @@ public class SistemaLoja {
             }
         }
 
-
         System.out.println("Cargo: ");
         scanner.nextLine();
         String cargo = scanner.nextLine();
 
-        System.out.println("Salário: ");
-        double salario = scanner.nextDouble();
+        while (salario <=0){
+            System.out.println("Salário: ");
+            salario = scanner.nextDouble();
+            if (salario <= 0){
+                System.out.println("Salário deve ser maior que zero, insira novamente!");
+            }
+        }
 
         System.out.println("Departamento: ");
         scanner.nextLine();
