@@ -89,7 +89,6 @@ public class SistemaLoja {
             }
         }
 
-
         while (preco <= 0){
             System.out.println("Preço produto: ");
             preco = scanner.nextDouble();
@@ -98,9 +97,16 @@ public class SistemaLoja {
             }
         }
 
-        System.out.println("Quantidade: ");
-        int quantidade = scanner.nextInt();
-        scanner.nextLine();
+        int quantidade = -1;
+        while (quantidade <=0){
+            System.out.println("Quantidade: ");
+            quantidade = scanner.nextInt();
+            if (quantidade <=0){
+                System.out.println("Quantidade não pode ser menor ou igual a zero, insira novamente!");
+            }
+            scanner.nextLine();
+        }
+
         //Iniciaizando o objeto produto
         Produto produto = new Produto(proximoId, nome, preco, quantidade);
         boolean produtoArmazenado = false; // produtoArmazenado começa como falso, se ele for == null, é true e é possível cadastrar, se não for == null ele é falso e alerta que não é mais possível cadastrar produtos.

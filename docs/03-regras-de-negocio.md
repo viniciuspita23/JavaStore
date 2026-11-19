@@ -51,13 +51,13 @@ O sistema deverá impedir o cadastro e a realização de vendas de produtos cujo
 
 O sistema deverá impedir o cadastro de produtos com nomes duplicados.
 
-## 3. Regras Planejadas
-
-As regras abaixo representam melhorias aprovadas para versões futuras e ainda não estão implementadas.
-
 Produtos com nomes diferentes poderão ser cadastrados, mesmo que representem produtos semelhantes. A identificação de possíveis duplicidades ficará sob responsabilidade do usuário.
 
 ### RN11 — Validação da quantidade inicial
+
+## 3. Regras Planejadas
+
+As regras abaixo representam melhorias aprovadas para versões futuras e ainda não estão implementadas.
 
 O sistema deverá impedir o cadastro de produtos com quantidade inicial igual ou inferior a zero.
 
