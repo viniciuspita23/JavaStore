@@ -78,8 +78,13 @@ public class SistemaLoja {
         while (nomeduplicado){
             nomeduplicado = false;
 
-            System.out.println("Nome produto: ");
-            nome = scanner.nextLine();
+            while (nome.isBlank()){
+                System.out.println("Nome produto: ");
+                nome = scanner.nextLine();
+                if(nome.isBlank()){
+                    System.out.println("Nome não pode ser em branco ou conter espaços vazios!");
+                }
+            }
 
             for (int i = 0; i <produtos.length ; i++) {
                 if (produtos[i] != null && nome.equals(produtos[i].nome)){
