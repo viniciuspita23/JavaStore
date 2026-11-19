@@ -75,13 +75,13 @@ O sistema deverá impedir o cadastro de funcionários com idade igual ou inferio
 
 O sistema deverá impedir o cadastro de funcionários com salário igual ou inferior a zero.
 
-## 3. Regras Planejadas
-
-As regras abaixo representam melhorias aprovadas para versões futuras e ainda não estão implementadas.
-
 ### RN16 — Validação de cargo e departamento
 
 O sistema deverá impedir o cadastro de funcionários caso os campos cargo ou departamento estejam vazios ou contenham apenas espaços em branco.
+
+## 3. Regras Planejadas
+
+As regras abaixo representam melhorias aprovadas para versões futuras e ainda não estão implementadas.
 
 ### RN17 — Validação do nome do funcionário
 
