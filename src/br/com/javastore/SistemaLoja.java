@@ -154,6 +154,7 @@ public class SistemaLoja {
     public void cadastrarFuncionario(){
         String nome = "";
         boolean nomeDuplicado = true;
+        int idade = -1;
 
         while (nomeDuplicado){
             nomeDuplicado = false;
@@ -167,8 +168,14 @@ public class SistemaLoja {
             }
         }
 
-        System.out.println("Idade: ");
-        int idade = scanner.nextInt();
+        while (idade <= 0){
+            System.out.println("Idade: ");
+            idade = scanner.nextInt();
+            if (idade <= 0){
+                System.out.println("Idade inválida, insira uma que seja válida!");
+            }
+        }
+
 
         System.out.println("Cargo: ");
         scanner.nextLine();
