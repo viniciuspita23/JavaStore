@@ -152,8 +152,20 @@ public class SistemaLoja {
 
     //Criação do metedo de cadastrar funcionários utilizado pelo case 3
     public void cadastrarFuncionario(){
-        System.out.println("Nome funcionário: ");
-        String nome = scanner.nextLine();
+        String nome = "";
+        boolean nomeDuplicado = true;
+
+        while (nomeDuplicado){
+            nomeDuplicado = false;
+            System.out.println("Nome funcionário: ");
+            nome = scanner.nextLine();
+            for (int i = 0; i < funcionarios.length; i++) {
+                if (funcionarios[i] != null && nome.equals(funcionarios[i].nome)){
+                    System.out.println("Funcionário já foi cadastrado!");
+                    nomeDuplicado = true;
+                }
+            }
+        }
 
         System.out.println("Idade: ");
         int idade = scanner.nextInt();

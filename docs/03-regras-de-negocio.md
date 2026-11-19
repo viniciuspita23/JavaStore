@@ -61,15 +61,15 @@ O sistema deverá impedir o cadastro de produtos com quantidade inicial igual ou
 
 O sistema deverá impedir o cadastro de produtos com nome vazio ou contendo apenas espaços em branco.
 
-## 3. Regras Planejadas
-
-As regras abaixo representam melhorias aprovadas para versões futuras e ainda não estão implementadas.
-
 ### RN13 — Unicidade do nome do funcionário
 
 O sistema deverá impedir o cadastro de funcionários com nomes exatamente duplicados.
 
 Nomes diferentes poderão ser cadastrados, mesmo que sejam semelhantes.
+
+## 3. Regras Planejadas
+
+As regras abaixo representam melhorias aprovadas para versões futuras e ainda não estão implementadas.
 
 ### RN14 — Validação da idade do funcionário
 
