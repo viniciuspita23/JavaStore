@@ -55,11 +55,11 @@ Produtos com nomes diferentes poderão ser cadastrados, mesmo que representem pr
 
 ### RN11 — Validação da quantidade inicial
 
+O sistema deverá impedir o cadastro de produtos com quantidade inicial igual ou inferior a zero.
+
 ## 3. Regras Planejadas
 
 As regras abaixo representam melhorias aprovadas para versões futuras e ainda não estão implementadas.
-
-O sistema deverá impedir o cadastro de produtos com quantidade inicial igual ou inferior a zero.
 
 ### RN12 — Validação do nome do produto
 
