@@ -159,14 +159,19 @@ public class SistemaLoja {
         String cargo = "";
         String departamento = "";
 
-        while (nomeDuplicado){
-            nomeDuplicado = false;
+        while (nome.isBlank() || nomeDuplicado) {
             System.out.println("Nome funcionário: ");
             nome = scanner.nextLine();
-            for (int i = 0; i < funcionarios.length; i++) {
-                if (funcionarios[i] != null && nome.equals(funcionarios[i].nome)){
-                    System.out.println("Funcionário já foi cadastrado!");
-                    nomeDuplicado = true;
+            nomeDuplicado = false;
+            if (nome.isBlank()) {
+                System.out.println("Nome não pode ser vazio ou conter apenas espaços!");
+            } else {
+                for (int i = 0; i < funcionarios.length; i++) {
+                    if (funcionarios[i] != null && nome.equals(funcionarios[i].nome)) {
+                        System.out.println("Funcionário já foi cadastrado!");
+                        nomeDuplicado = true;
+                        break;
+                    }
                 }
             }
         }
