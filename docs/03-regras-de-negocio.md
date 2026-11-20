@@ -79,13 +79,14 @@ O sistema deverá impedir o cadastro de funcionários com salário igual ou infe
 
 O sistema deverá impedir o cadastro de funcionários caso os campos cargo ou departamento estejam vazios ou contenham apenas espaços em branco.
 
+### RN17 — Validação do nome do funcionário
+
+O sistema deverá impedir o cadastro de funcionários com nome vazio ou contendo apenas espaços em branco.
+
 ## 3. Regras Planejadas
 
 As regras abaixo representam melhorias aprovadas para versões futuras e ainda não estão implementadas.
 
-### RN17 — Validação do nome do funcionário
-
-O sistema deverá impedir o cadastro de funcionários com nome vazio ou contendo apenas espaços em branco.
 
 ### RN18 — Disponibilidade de espaço no histórico de vendas
 
