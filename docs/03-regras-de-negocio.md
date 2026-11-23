@@ -83,14 +83,13 @@ O sistema deverá impedir o cadastro de funcionários caso os campos cargo ou de
 
 O sistema deverá impedir o cadastro de funcionários com nome vazio ou contendo apenas espaços em branco.
 
-## 3. Regras Planejadas
-
-As regras abaixo representam melhorias aprovadas para versões futuras e ainda não estão implementadas.
-
-
 ### RN18 — Disponibilidade de espaço no histórico de vendas
 
 Antes de concluir uma venda, o sistema deverá verificar se existe espaço disponível no array de vendas.
+
+## 3. Regras Planejadas
+
+As regras abaixo representam melhorias aprovadas para versões futuras e ainda não estão implementadas.
 
 Caso o limite de 1.000 registros seja atingido, deverá informar o usuário e impedir a operação, sem descontar produtos do estoque.
 
