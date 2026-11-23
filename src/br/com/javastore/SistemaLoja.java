@@ -261,13 +261,18 @@ public class SistemaLoja {
         if (!produtoEncontrado){
             System.out.println("Produto não encontrado!");
         }
+        boolean espacoDisponivel = false;
         if (venda != null) {
             for (int i = 0; i < vendas.length; i++) {
                 if (vendas[i] == null) {
                     vendas[i] = venda;
+                    espacoDisponivel = true;
                     break;
                 }
             }
+        }
+        if (!espacoDisponivel){
+            System.out.println("Memória cheia para registrar vendas, entre em contato com o suporte!");
         }
 
     }
