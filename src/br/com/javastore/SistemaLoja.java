@@ -22,6 +22,9 @@ public class SistemaLoja {
     //Contador do ID de produto utilizando pelo Case 1
     int proximoId = 1;
 
+    //Contador do ID de funcionários utilizado pelo Case 3
+    int proximoIdFuncionario = 1;
+
     //Metodo inicialização menu na Main
     public  void iniciarMenu(){
     //Criação menu
@@ -31,7 +34,7 @@ public class SistemaLoja {
             System.out.println("1 - Cadastrar produto");
             System.out.println("2 - Listar produtos");
             System.out.println("3 - Cadastrar funcionário");
-            System.out.println("4 - Relaizar venda");
+            System.out.println("4 - Realizar venda");
             System.out.println("5 - Relatórios");
             System.out.println("0 - Sair");
             System.out.println("Escolha uma opção: ");
@@ -211,13 +214,14 @@ public class SistemaLoja {
         }
 
         //Inicializando o objeto funcionario
-        Funcionario funcionario = new Funcionario(nome, idade, cargo, salario, departamento );
+        Funcionario funcionario = new Funcionario(proximoIdFuncionario, nome, idade, cargo, salario, departamento );
         boolean funcionarioCadastrado = false;
         for (int i = 0; i < funcionarios.length;i++){
             if (funcionarios[i] == null){
                 funcionarioCadastrado = true;
                 funcionarios[i] = funcionario;
                 System.out.println("Funcionário cadastrado!");
+                proximoIdFuncionario++;
                 break;
             }
         }
@@ -231,6 +235,24 @@ public class SistemaLoja {
         int qtdProd = -1;
         boolean produtoEncontrado = false;
         Venda venda = null;
+        int idFuncionario = 0;
+        boolean loginFuncionario = true;
+
+        System.out.println("Digite seu ID de usuário para iniciar a venda");
+        while (loginFuncionario){
+            idFuncionario = scanner.nextInt();
+            for (int i = 0; i < funcionarios.length; i++) {
+                if (funcionarios[i] != null && idFuncionario == funcionarios[i].idFuncionario){
+                    System.out.println("Acesso permitido");
+                    loginFuncionario = false;
+                    break;
+                }
+            }
+            if (loginFuncionario){
+                System.out.println("Acesso negado, digite novamente seu ID");
+            }
+
+        }
 
         System.out.println("Selecione o produto para realizar a venda: ");
         int idProd = scanner.nextInt();
@@ -248,9 +270,9 @@ public class SistemaLoja {
                     }
                 }
                 if (qtdProd <= produtos[i].quantidade) {
-                    System.out.println("Venda realiza!");
+                    System.out.println("Venda realizada!");
                     produtos[i].quantidade -= qtdProd;
-                    venda = new Venda(idProd, produtos[i].nome, produtos[i].preco, qtdProd);
+                    venda = new Venda(idProd, produtos[i].nome, produtos[i].preco, qtdProd, idFuncionario);
                 } else {
                     System.out.println("Quantidade indisponível!");
                 }

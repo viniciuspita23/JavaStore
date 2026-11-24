@@ -103,15 +103,15 @@ Também deverá apresentar os valores monetários em formato adequado.
 
 O sistema deverá registrar automaticamente a data e o horário em que cada venda for realizada.
 
-## 3. Regras Planejadas
-
-As regras abaixo representam melhorias aprovadas para versões futuras e ainda não estão implementadas.
-
 ### RN22 — Identificação do funcionário responsável pela venda
 
 O sistema deverá registrar o funcionário responsável por cada venda, vinculando a operação a um funcionário cadastrado.
 
 O funcionário deverá ser identificado pelo seu ID, e o sistema deverá verificar se ele está cadastrado antes de permitir a venda.
+
+## 3. Regras Planejadas
+
+As regras abaixo representam melhorias aprovadas para versões futuras e ainda não estão implementadas.
 
 ### RN23 — Venda com múltiplos produtos
 
