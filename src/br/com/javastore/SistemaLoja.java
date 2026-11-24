@@ -112,7 +112,7 @@ public class SistemaLoja {
             scanner.nextLine();
         }
 
-        //Iniciaizando o objeto produto
+        //Inicializando o objeto produto
         Produto produto = new Produto(proximoId, nome, preco, quantidade);
         boolean produtoArmazenado = false; // produtoArmazenado começa como falso, se ele for == null, é true e é possível cadastrar, se não for == null ele é falso e alerta que não é mais possível cadastrar produtos.
         //Armazenar os produtos . Utilizei produtos pois é a variável do array onde é armazenado
@@ -368,10 +368,15 @@ public class SistemaLoja {
 
     //Metodo subcase 4 do case 5
     public void exibirEstoque (){
+        boolean produtoCadastrado = false;
         for (int i = 0; i < produtos.length; i++) {
             if (produtos[i] != null){
+                produtoCadastrado = true;
                 produtos[i].exibirEstoque();
             }
+        }
+        if (!produtoCadastrado) {
+            System.out.println("Não há produtos cadastrados");
         }
     }
 

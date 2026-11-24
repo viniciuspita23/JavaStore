@@ -87,15 +87,15 @@ O sistema deverá impedir o cadastro de funcionários com nome vazio ou contendo
 
 Antes de concluir uma venda, o sistema deverá verificar se existe espaço disponível no array de vendas.
 
-## 3. Regras Planejadas
-
-As regras abaixo representam melhorias aprovadas para versões futuras e ainda não estão implementadas.
-
 Caso o limite de 1.000 registros seja atingido, deverá informar o usuário e impedir a operação, sem descontar produtos do estoque.
 
 ### RN19 — Tratamento de estoque vazio
 
 Quando não houver produtos cadastrados, o sistema deverá informar ao usuário que o estoque está vazio.
+
+## 3. Regras Planejadas
+
+As regras abaixo representam melhorias aprovadas para versões futuras e ainda não estão implementadas.
 
 ### RN20 — Tratamento de faturamento sem vendas
 
