@@ -328,12 +328,18 @@ public class SistemaLoja {
     //Metodo do subcase 2 do case 5
     public void calcularFaturamento(){
         double faturamento = 0;
+        boolean existeFaturamento = false;
         for (int i = 0; i < vendas.length;i++){
             if (vendas[i] != null){
+                existeFaturamento = true;
                 faturamento += vendas[i].qtdProd * vendas[i].precoProd;
             }
         }
-        System.out.println("Faturamento total: " + faturamento);
+        if (existeFaturamento){
+            System.out.println("Faturamento total: " + faturamento);
+        } else {
+            System.out.println("Não existem vendas para calcular o faturamento");
+        }
     }
 
     //Metodo do subcase 3 do case 5
